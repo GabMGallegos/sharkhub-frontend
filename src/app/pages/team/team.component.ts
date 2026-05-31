@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-contact',
+    selector: 'app-team',
     imports: [
         RouterLink
     ],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.css'
+    templateUrl: './team.component.html',
+    styleUrl: './team.component.css'
 })
-export class ContactComponent {}
+export class TeamComponent {}

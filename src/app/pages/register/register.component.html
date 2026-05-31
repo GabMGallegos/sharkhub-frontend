@@ -1,1 +1,40 @@
-<p>register works!</p>
+<section class="container-fluid page-header py-5 mb-5">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">Registro</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                <li class="breadcrumb-item"><a class="text-white" routerLink="/">Inicio</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Registro</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-9">
+            <div class="bg-secondary p-5">
+                <h2 class="text-uppercase text-center mb-4">Crear cuenta</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control bg-dark border-0 text-light py-3" id="name" name="name" placeholder="Nombre completo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark border-0 text-light py-3" id="email" name="email" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control bg-dark border-0 text-light py-3" id="password" name="password" placeholder="Contraseña">
+                    </div>
+                    <button type="button" class="btn btn-primary w-100 py-3">Crear cuenta</button>
+                </form>
+                <p class="text-center mt-4 mb-0">
+                    ¿Ya tienes cuenta?
+                    <a routerLink="/login" class="text-primary">Inicia sesión aquí</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

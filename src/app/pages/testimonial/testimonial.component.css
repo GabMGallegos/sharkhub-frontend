@@ -1,0 +1,7 @@
+.testimonial-item {
+    transition: transform 0.2s ease-in-out;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-4px);
+}

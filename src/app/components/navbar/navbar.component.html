@@ -1,5 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5">
-    <a routerLink="/" class="navbar-brand ms-4 ms-lg-0">
+<nav
+    class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5"
+    [class.shadow-sm]="isScrolled"
+>
+    <a routerLink="/" class="navbar-brand ms-4 ms-lg-0" (click)="closeMenu()">
         <h1 class="mb-0 text-primary text-uppercase">
             <i class="fa fa-cut me-3"></i>SharkHub
         </h1>
@@ -8,46 +11,84 @@
     <button
         type="button"
         class="navbar-toggler me-4"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-label="Abrir menú de navegación"
     >
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse" [class.show]="isMenuOpen" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a
                 routerLink="/"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 class="nav-item nav-link"
+                (click)="closeMenu()"
             >
                 Inicio
             </a>
 
-            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link" (click)="closeMenu()">
                 Nosotros
             </a>
 
-            <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">
+            <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link" (click)="closeMenu()">
                 Servicios
             </a>
 
-            <a routerLink="/price" routerLinkActive="active" class="nav-item nav-link">
-                Precios
-            </a>
+            <div class="nav-item dropdown" [class.show]="isPagesOpen">
+                <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    [class.active]="isPagesOpen || isPagesRoute"
+                    (click)="togglePages($event)"
+                    [attr.aria-expanded]="isPagesOpen"
+                >
+                    Páginas
+                </a>
 
-            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">
+                <div class="dropdown-menu m-0" [class.show]="isPagesOpen">
+                    <a routerLink="/price" routerLinkActive="active" class="dropdown-item" (click)="closeMenu()">
+                        Plan de precios
+                    </a>
+                    <a routerLink="/team" routerLinkActive="active" class="dropdown-item" (click)="closeMenu()">
+                        Barberos
+                    </a>
+                    <a routerLink="/open" routerLinkActive="active" class="dropdown-item" (click)="closeMenu()">
+                        Horarios de atención
+                    </a>
+                    <a routerLink="/testimonial" routerLinkActive="active" class="dropdown-item" (click)="closeMenu()">
+                        Testimonios
+                    </a>
+                    <a routerLink="/404" routerLinkActive="active" class="dropdown-item" (click)="closeMenu()">
+                        Página 404
+                    </a>
+                </div>
+            </div>
+
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link" (click)="closeMenu()">
                 Contacto
             </a>
 
-            <a routerLink="/login" routerLinkActive="active" class="nav-item nav-link">
-                Iniciar sesión
-            </a>
-
-            <a routerLink="/register" routerLinkActive="active" class="nav-item nav-link">
-                Registrarse
+            <a
+                routerLink="/login"
+                class="btn btn-primary rounded-0 py-3 mt-3 d-lg-none w-100 mobile-appointment-button"
+                (click)="closeMenu()"
+            >
+                Agendar cita
+                <i class="fa fa-arrow-right ms-3"></i>
             </a>
         </div>
+
+        <a
+            routerLink="/login"
+            class="btn btn-primary rounded-0 py-2 px-lg-4 ms-lg-3 d-none d-lg-inline-flex align-items-center"
+            (click)="closeMenu()"
+        >
+            Agendar cita
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
     </div>
 </nav>
