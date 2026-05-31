@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5">
+    <a routerLink="/" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="mb-0 text-primary text-uppercase">
+            <i class="fa fa-cut me-3"></i>SharkHub
+        </h1>
+    </a>
+
+    <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-item nav-link"
+            >
+                Inicio
+            </a>
+
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">
+                Nosotros
+            </a>
+
+            <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">
+                Servicios
+            </a>
+
+            <a routerLink="/price" routerLinkActive="active" class="nav-item nav-link">
+                Precios
+            </a>
+
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">
+                Contacto
+            </a>
+
+            <a routerLink="/login" routerLinkActive="active" class="nav-item nav-link">
+                Iniciar sesión
+            </a>
+
+            <a routerLink="/register" routerLinkActive="active" class="nav-item nav-link">
+                Registrarse
+            </a>
+        </div>
+    </div>
+</nav>
